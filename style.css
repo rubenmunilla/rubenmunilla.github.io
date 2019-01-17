@@ -1,21 +1,20 @@
-<html>
-  <head>
-    <meta http-equiv="content-type" content="text/html; charset=windows-1252">
-    <link rel="alternate stylesheet" type="text/css" href="resource://gre-resources/plaintext.css"
-
-      title="Ajustar líneas largas">
-  </head>
-  <body>
-    <pre>&lt;html&gt;
-  &lt;head&gt;
-    &lt;meta http-equiv="content-type" content="text/html; charset=windows-1252"&gt;
-    &lt;link rel="alternate stylesheet" type="text/css" href="resource://gre-resources/plaintext.css"
-
-      title="Ajustar líneas largas"&gt;
-  &lt;/head&gt;
-  &lt;body&gt;
-    &lt;pre&gt;*, *:before, *:after {
+*:before, *:after, * {
   -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
+@media screen and (max-width: 50em) {
+	* {
+		clear: both;
+	}
+	.column {
+		width: 100%;
+		padding-left: 50px;
+		clear:both;
+	}
+	.row {
+		clear: both;
+		margin-right: -1%;
+		margin-left:  -1%;
+	}
 }
  
 body {
@@ -92,7 +91,7 @@ header p {
   padding-top: .5em;
   opacity: .9;
   position: relative;
-  top: 360px;
+  top: -95px;
 }
 
 section h1 {
@@ -152,21 +151,25 @@ footer hr {
   margin-left: auto;
 }
 
-.row {
-  clear: both;
-  margin-right: -1%;
-  margin-left:  -1%;
-  
+.column {
+  float: left;
 }
 
 .row:before,
 .row:after {
     content: " "; /* 1 */
     display: table; /* 2 */
+	clear: both;
 }
 
 .row:after {
     clear: both;
+}
+
+.skillcloud {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /**
@@ -189,13 +192,15 @@ footer hr {
   margin-right: auto;
 }
 
-@media screen and (min-width: 40em) {
+@media screen and (min-width: 50em) {
   .grid-1 { width: 16.6666666%; }
   .grid-3 { width: 50%; }
   .grid-4 { width: 66.6666666%; }
   .grid-5 { width: 83.3333333%; }
   .grid-6 { width: 100%; }
-
+  .column {
+	  width: 50%;
+  }
 }
 
 /* -------------------Custom Blocks----------------- */
@@ -341,6 +346,3 @@ footer hr {
   }
   
 }
-</pre>
-  </body>
-</html>
